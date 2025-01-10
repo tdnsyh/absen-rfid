@@ -99,7 +99,7 @@
                         <span>Pengguna</span>
                     </a>
                 </li>
-                {{-- <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a href="{{ route('logout') }}" class="sidebar-link"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="bi bi-arrow-left-square"></i>
@@ -108,7 +108,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                </li> --}}
+                </li>
             </ul>
         </div>
     </div>

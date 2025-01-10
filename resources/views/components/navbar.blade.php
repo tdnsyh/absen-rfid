@@ -24,7 +24,25 @@
                         </li>
                     </ul>
                     <span class="navbar-text">
-                        <a href="#" class="btn btn-primary text-white px-3">Masuk</a>
+                        @if (Route::has('login'))
+                            <nav class="-mx-3 flex flex-1 justify-end">
+                                @auth
+                                    <a href="{{ url('/dashboard') }}" class="btn btn-primary">
+                                        Dashboard
+                                    </a>
+                                @else
+                                    <a href="{{ route('login') }}" class="btn btn-success">
+                                        Log in
+                                    </a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="btn btn-info">
+                                            Register
+                                        </a>
+                                    @endif
+                                @endauth
+                            </nav>
+                        @endif
                     </span>
                 </div>
             </div>
