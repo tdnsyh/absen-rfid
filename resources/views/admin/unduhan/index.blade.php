@@ -30,7 +30,7 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <p>Pengguna sistem</p>
+                <p>Pusat Unduhan</p>
             </div>
         </div>
         <x-footer></x-footer>

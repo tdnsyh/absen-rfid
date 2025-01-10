@@ -29,11 +29,11 @@
             </div>
         </div>
         <div class="tombol">
-            <a href="{{ route('data-guru.create') }}" class="btn btn-primary mb-3">Tambah Guru</a>
+            <a href="{{ route('mata-pelajaran.create') }}" class="btn btn-primary mb-3">Tambah Pelajaran</a>
         </div>
-        @if ($gurus->isEmpty())
+        @if ($pelajaran->isEmpty())
             <div class="alert alert-warning" role="alert">
-                Belum ada data Guru.
+                Belum ada Artikel.
             </div>
         @else
             <div class="page-content">
@@ -44,37 +44,23 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
-                                        <th>NIP</th>
-                                        <th>Pelajaran</th>
-                                        <th>Tag UID</th>
-                                        <th>Action</th>
+                                        <th>Nama Pelajaran</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($gurus as $guru)
+                                    @foreach ($pelajaran as $index => $p)
                                         <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $guru->nama }}</td>
-                                            <td>{{ $guru->nip }}</td>
+                                            <td>{{ $index + 1 }}</td>
+                                            <td>{{ $p->nama_pelajaran }}</td>
                                             <td>
-                                                @if ($guru->detailGuru && $guru->detailGuru->pelajaran)
-                                                    {{ $guru->detailGuru->pelajaran->nama_pelajaran }}
-                                                @else
-                                                    Tidak ada pelajaran
-                                                @endif
-                                            </td>
-                                            <td>{{ $guru->tag_uid }}</td>
-                                            <td>
-                                                <a href="{{ route('data-guru.show', $guru->id) }}"
-                                                    class="btn btn-info btn-sm">Show</a>
-                                                <a href="{{ route('data-guru.edit', $guru->id) }}"
+                                                <a href="{{ route('mata-pelajaran.edit', $p->id) }}"
                                                     class="btn btn-warning btn-sm">Edit</a>
-                                                <form action="{{ route('data-guru.destroy', $guru->id) }}"
-                                                    method="POST" style="display:inline;">
+                                                <form action="{{ route('mata-pelajaran.destroy', $p->id) }}"
+                                                    method="POST" class="d-inline">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                                 </form>
                                             </td>
                                         </tr>

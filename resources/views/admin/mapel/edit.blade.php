@@ -30,7 +30,17 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <p>Pengguna sistem</p>
+                <form action="{{ route('mata-pelajaran.update', $pelajaran->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="mb-3">
+                        <label for="nama_pelajaran" class="form-label">Nama Pelajaran</label>
+                        <input type="text" name="nama_pelajaran" id="nama_pelajaran" class="form-control"
+                            value="{{ $pelajaran->nama_pelajaran }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Perbarui</button>
+                    <a href="{{ route('mata-pelajaran.index') }}"" class="btn btn-secondary">Kembali</a>
+                </form>
             </div>
         </div>
         <x-footer></x-footer>
