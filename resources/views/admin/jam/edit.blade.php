@@ -28,29 +28,31 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <form action="{{ route('jam-absen.update', $jamAbsen->id) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-                    <div class="mb-3">
-                        <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama"
-                            value="{{ $jamAbsen->nama }}" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="jam_mulai" class="form-label">Jam Mulai</label>
-                        <input type="time" class="form-control" id="jam_mulai" name="jam_mulai"
-                            value="{{ $jamAbsen->jam_mulai }}" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="jam_selesai" class="form-label">Jam Selesai</label>
-                        <input type="time" class="form-control" id="jam_selesai" name="jam_selesai"
-                            value="{{ $jamAbsen->jam_selesai }}" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Update</button>
-                    <a href="{{ route('jam-absen.index') }}"" class="btn btn-secondary">Kembali</a>
-                </form>
+        <div class="page-content">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ route('jam-absen.update', $jamAbsen->id) }}" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                value="{{ $jamAbsen->nama }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jam_mulai" class="form-label">Jam Mulai</label>
+                            <input type="time" class="form-control" id="jam_mulai" name="jam_mulai"
+                                value="{{ $jamAbsen->jam_mulai }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jam_selesai" class="form-label">Jam Selesai</label>
+                            <input type="time" class="form-control" id="jam_selesai" name="jam_selesai"
+                                value="{{ $jamAbsen->jam_selesai }}" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        <a href="{{ route('jam-absen.index') }}"" class="btn btn-secondary">Kembali</a>
+                    </form>
+                </div>
             </div>
         </div>
         <x-footer></x-footer>

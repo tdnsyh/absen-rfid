@@ -28,52 +28,54 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <form action="{{ route('data-guru.store') }}" method="POST">
-                    @csrf
-                    <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" name="nama" id="nama" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="nip">NIP</label>
-                        <input type="text" name="nip" id="nip" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="tag_uid">Tag UID</label>
-                        <input type="text" name="tag_uid" id="tag_uid" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="pelajaran_id">Pelajaran</label>
-                        <select name="pelajaran_id" id="pelajaran_id" class="form-control" required>
-                            @foreach ($pelajaran as $pel)
-                                <option value="{{ $pel->id }}">{{ $pel->nama_pelajaran }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="jenis_kelamin">Jenis Kelamin</label>
-                        <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="nik">NIK</label>
-                        <input type="text" name="nik" id="nik" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="no_telf">No Telepon</label>
-                        <input type="text" name="no_telf" id="no_telf" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <textarea name="alamat" id="alamat" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{ route('data-guru.index') }}"" class="btn btn-secondary">Kembali</a>
-                </form>
+        <div class="page-content">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ route('data-guru.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input type="text" name="nama" id="nama" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nip">NIP</label>
+                            <input type="text" name="nip" id="nip" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tag_uid">Tag UID</label>
+                            <input type="text" name="tag_uid" id="tag_uid" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pelajaran_id">Pelajaran</label>
+                            <select name="pelajaran_id" id="pelajaran_id" class="form-control" required>
+                                @foreach ($pelajaran as $pel)
+                                    <option value="{{ $pel->id }}">{{ $pel->nama_pelajaran }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="jenis_kelamin">Jenis Kelamin</label>
+                            <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
+                                <option value="L">Laki-laki</option>
+                                <option value="P">Perempuan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="nik">NIK</label>
+                            <input type="text" name="nik" id="nik" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="no_telf">No Telepon</label>
+                            <input type="text" name="no_telf" id="no_telf" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat</label>
+                            <textarea name="alamat" id="alamat" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <a href="{{ route('data-guru.index') }}"" class="btn btn-secondary">Kembali</a>
+                    </form>
+                </div>
             </div>
         </div>
         <x-footer></x-footer>

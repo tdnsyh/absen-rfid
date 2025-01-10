@@ -28,9 +28,11 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <p>Pusat Unduhan</p>
+        <div class="page-content">
+            <div class="card">
+                <div class="card-body">
+                    <p>Pusat Unduhan</p>
+                </div>
             </div>
         </div>
         <x-footer></x-footer>

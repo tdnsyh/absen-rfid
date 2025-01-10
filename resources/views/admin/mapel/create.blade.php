@@ -28,17 +28,20 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <form action="{{ route('mata-pelajaran.store') }}" method="POST">
-                    @csrf
-                    <div class="mb-3">
-                        <label for="nama_pelajaran" class="form-label">Nama Pelajaran</label>
-                        <input type="text" name="nama_pelajaran" id="nama_pelajaran" class="form-control" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    <a href="{{ route('mata-pelajaran.index') }}"" class="btn btn-secondary">Kembali</a>
-                </form>
+        <div class="page-content">
+            <div class="card">
+                <div class="card-body">
+                    <form action="{{ route('mata-pelajaran.store') }}" method="POST">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="nama_pelajaran" class="form-label">Nama Pelajaran</label>
+                            <input type="text" name="nama_pelajaran" id="nama_pelajaran" class="form-control"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <a href="{{ route('mata-pelajaran.index') }}"" class="btn btn-secondary">Kembali</a>
+                    </form>
+                </div>
             </div>
         </div>
         <x-footer></x-footer>

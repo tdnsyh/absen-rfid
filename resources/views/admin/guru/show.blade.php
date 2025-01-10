@@ -28,45 +28,47 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table">
-                        <tr>
-                            <th>Nama</th>
-                            <td>{{ $guru->nama }}</td>
-                        </tr>
-                        <tr>
-                            <th>NIP</th>
-                            <td>{{ $guru->nip }}</td>
-                        </tr>
-                        <tr>
-                            <th>Tag UID</th>
-                            <td>{{ $guru->tag_uid }}</td>
-                        </tr>
-                        <tr>
-                            <th>Pelajaran</th>
-                            <td>{{ $guru->detailGuru->pelajaran->nama_pelajaran ?? 'Tidak ada pelajaran' }}</td>
-                        </tr>
-                        <tr>
-                            <th>Jenis Kelamin</th>
-                            <td>{{ $guru->detailGuru->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
-                        </tr>
-                        <tr>
-                            <th>NIK</th>
-                            <td>{{ $guru->detailGuru->nik }}</td>
-                        </tr>
-                        <tr>
-                            <th>No Telepon</th>
-                            <td>{{ $guru->detailGuru->no_telf }}</td>
-                        </tr>
-                        <tr>
-                            <th>Alamat</th>
-                            <td>{{ $guru->detailGuru->alamat }}</td>
-                        </tr>
-                    </table>
+        <div class="page-content">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th>Nama</th>
+                                <td>{{ $guru->nama }}</td>
+                            </tr>
+                            <tr>
+                                <th>NIP</th>
+                                <td>{{ $guru->nip }}</td>
+                            </tr>
+                            <tr>
+                                <th>Tag UID</th>
+                                <td>{{ $guru->tag_uid }}</td>
+                            </tr>
+                            <tr>
+                                <th>Pelajaran</th>
+                                <td>{{ $guru->detailGuru->pelajaran->nama_pelajaran ?? 'Tidak ada pelajaran' }}</td>
+                            </tr>
+                            <tr>
+                                <th>Jenis Kelamin</th>
+                                <td>{{ $guru->detailGuru->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
+                            </tr>
+                            <tr>
+                                <th>NIK</th>
+                                <td>{{ $guru->detailGuru->nik }}</td>
+                            </tr>
+                            <tr>
+                                <th>No Telepon</th>
+                                <td>{{ $guru->detailGuru->no_telf }}</td>
+                            </tr>
+                            <tr>
+                                <th>Alamat</th>
+                                <td>{{ $guru->detailGuru->alamat }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a href="{{ route('data-guru.index') }}" class="btn btn-secondary mb-3">Kembali ke Daftar Guru</a>
                 </div>
-                <a href="{{ route('data-guru.index') }}" class="btn btn-secondary mb-3">Kembali ke Daftar Guru</a>
             </div>
         </div>
         <x-footer></x-footer>
