@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ApiAbsenController;
 use App\Http\Controllers\Dashboard\DashboardArtikelController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DashboardDataAbsensiController;
@@ -33,6 +34,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('pusat-unduhan', [DashboardPusatUnduhanController::class, 'index']);
     Route::get('pengguna-sistem', [DashboardUserController::class, 'index']);
 });
+
+//api
+Route::get('/api/cek-uid/{uid}', [ApiAbsenController::class, 'checkUid']);
 
 //web
 Route::get('/', [WebHomeController::class, 'index']);
