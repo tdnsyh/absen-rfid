@@ -14,7 +14,7 @@
                         <div class="container">
                             <form action="{{ route('login') }}" method="POST">
                                 @csrf
-                                <div class="mb-3">
+                                <div class="mb-3 mt-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
@@ -22,17 +22,12 @@
                                     <label for="password" class="form-label">Password</label>
                                     <input type="password" class="form-control" id="password" name="password" required>
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                                <button type="submit" class="btn btn-primary w-100 mb-2">Login</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container text-center mt-2">
-        <p>
-            Belum punya akun? <a href="{{ route('register') }}" class="text-decoration-none">daftar disini!</a>
-        </p>
     </div>
 </x-layout-web>

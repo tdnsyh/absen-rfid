@@ -1,6 +1,6 @@
 <div class="sticky-top">
-    <div class="mt-4 container">
-        <nav class="navbar navbar-expand-lg bg-primary-subtle rounded-3">
+    <div class="container">
+        <nav class="navbar ukuran mt-4 navbar-expand-lg bg-primary-subtle rounded-3 p-2">
             <div class="container ms-2 me-2">
                 <a class="navbar-brand fw-bold" href="#">SMK Al - Duka</a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
