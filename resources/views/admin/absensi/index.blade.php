@@ -76,7 +76,7 @@
                                 <tr>
                                     <th scope="col">No</th>
                                     <th scope="col">Nama</th>
-                                    <th scope="col">Pelajaran</th>
+                                    <th scope="col" class="text-nowrap">Pelajaran</th>
                                     <th scope="col">Masuk</th>
                                     <th scope="col">Pulang</th>
                                     <th scope="col">Keterangan</th>
@@ -87,7 +87,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Mark</td>
-                                    <td>Matematika</td>
+                                    <td class="text-nowrap">Matematika</td>
                                     <td>07:00</td>
                                     <td>16:00</td>
                                     <td><span class="badge text-bg-success">Hadir</span></td>
@@ -98,7 +98,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Mark</td>
-                                    <td>Bahasa Inggris</td>
+                                    <td class="text-nowrap">Bahasa Inggris</td>
                                     <td>-</td>
                                     <td>-</td>
                                     <td><span class="badge text-bg-danger">Belum absen</span></td>

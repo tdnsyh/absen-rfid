@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="tombol">
-            <a href="{{ route('data-guru.create') }}" class="btn btn-primary mb-3">Tambah Guru</a>
+            <a href="{{ route('data-guru.create') }}" class="btn btn-primary mb-3 mt-0">Tambah Guru</a>
         </div>
         @if ($gurus->isEmpty())
             <div class="alert alert-warning" role="alert">
@@ -48,7 +48,7 @@
                                         <th>NIP</th>
                                         <th>Pelajaran</th>
                                         <th>Tag UID</th>
-                                        <th>Action</th>
+                                        <th class="text-nowrap">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -65,7 +65,7 @@
                                                 @endif
                                             </td>
                                             <td>{{ $guru->tag_uid }}</td>
-                                            <td>
+                                            <td class="text-nowrap">
                                                 <a href="{{ route('data-guru.show', $guru->id) }}"
                                                     class="btn btn-info btn-sm">
                                                     <i class="bi bi-eye"></i>

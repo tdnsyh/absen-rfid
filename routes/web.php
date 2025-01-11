@@ -32,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
     //can beres
     Route::get('absensi', [DashboardDataAbsensiController::class, 'index']);
     Route::get('pusat-unduhan', [DashboardPusatUnduhanController::class, 'index']);
-    Route::get('pengguna-sistem', [DashboardUserController::class, 'index']);
+    Route::resource('pengguna-sistem', DashboardUserController::class);
 });
 
 //api

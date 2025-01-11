@@ -53,17 +53,20 @@
                                         <strong>Penulis:</strong> {{ $artikel->penulis }}<br>
                                         <strong>Kategori:</strong> {{ $artikel->kategori }}
                                     </p>
-                                    <a href="{{ route('artikel.show', $artikel->id) }}"
-                                        class="btn btn-info btn-sm">Lihat
-                                        Detail</a>
-                                    <a href="{{ route('artikel.edit', $artikel->id) }}"
-                                        class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ route('artikel.show', $artikel->id) }}" class="btn btn-info btn-sm">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                    <a href="{{ route('artikel.edit', $artikel->id) }}" class="btn btn-warning btn-sm">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
 
                                     <form action="{{ route('artikel.destroy', $artikel->id) }}" method="POST"
                                         style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                        <button type="submit" class="btn btn-danger btn-sm">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
                                     </form>
                                 </div>
                             </div>
