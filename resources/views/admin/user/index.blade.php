@@ -29,11 +29,9 @@
             </div>
         </div>
         <div class="page-content">
-            <div class="tombol">
-                <a href="{{ route('pengguna-sistem.create') }}" class="btn btn-primary mb-3">Tambah Pengguna</a>
-            </div>
             <div class="card">
                 <div class="card-body">
+                    <a href="{{ route('pengguna-sistem.create') }}" class="btn btn-primary mb-3">Tambah Pengguna</a>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>

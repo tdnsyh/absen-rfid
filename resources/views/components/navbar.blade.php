@@ -34,12 +34,6 @@
                                     <a href="{{ route('login') }}" class="btn btn-success">
                                         Log in
                                     </a>
-
-                                    @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="btn btn-info">
-                                            Register
-                                        </a>
-                                    @endif
                                 @endauth
                             </nav>
                         @endif

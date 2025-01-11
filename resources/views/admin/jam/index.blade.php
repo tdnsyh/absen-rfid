@@ -28,56 +28,56 @@
                 </div>
             </div>
         </div>
-        <div class="tombol">
-            <a href="{{ route('jam-absen.create') }}" class="btn btn-primary mb-3">Tambah Jam Absen</a>
-        </div>
-        @if ($jamAbsens->isEmpty())
-            <div class="alert alert-warning" role="alert">
-                Belum ada jam Absen.
-            </div>
-        @else
-            <div class="page-content">
-                <div class="card">
-                    <div class="card-body">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Nama</th>
-                                    <th>Jam Mulai</th>
-                                    <th>Jam Selesai</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($jamAbsens as $jamAbsen)
+        <div class="page-content">
+            <div class="card">
+                <div class="card-body">
+                    <a href="{{ route('jam-absen.create') }}" class="btn btn-primary mb-3">Tambah Jam Absen</a>
+                    @if ($jamAbsens->isEmpty())
+                        <div class="alert alert-warning" role="alert">
+                            Belum ada jam Absen.
+                        </div>
+                    @else
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <td>{{ $jamAbsen->id }}</td>
-                                        <td>{{ $jamAbsen->nama }}</td>
-                                        <td>{{ $jamAbsen->jam_mulai }}</td>
-                                        <td>{{ $jamAbsen->jam_selesai }}</td>
-                                        <td>
-                                            <a href="{{ route('jam-absen.edit', $jamAbsen->id) }}"
-                                                class="btn btn-warning btn-sm">
-                                                <i class="bi bi-pencil"></i>
-                                            </a>
-                                            <form action="{{ route('jam-absen.destroy', $jamAbsen->id) }}"
-                                                method="POST" style="display:inline;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm">
-                                                    <i class="bi bi-trash"></i>
-                                                </button>
-                                            </form>
-                                        </td>
+                                        <th>#</th>
+                                        <th>Nama</th>
+                                        <th>Jam Mulai</th>
+                                        <th>Jam Selesai</th>
+                                        <th>Aksi</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+                                </thead>
+                                <tbody>
+                                    @foreach ($jamAbsens as $jamAbsen)
+                                        <tr>
+                                            <td>{{ $jamAbsen->id }}</td>
+                                            <td>{{ $jamAbsen->nama }}</td>
+                                            <td>{{ $jamAbsen->jam_mulai }}</td>
+                                            <td>{{ $jamAbsen->jam_selesai }}</td>
+                                            <td>
+                                                <a href="{{ route('jam-absen.edit', $jamAbsen->id) }}"
+                                                    class="btn btn-warning btn-sm">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <form action="{{ route('jam-absen.destroy', $jamAbsen->id) }}"
+                                                    method="POST" style="display:inline;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    @endif
                 </div>
             </div>
-        @endif
+        </div>
         <x-footer></x-footer>
     </div>
 </x-layout-admin>

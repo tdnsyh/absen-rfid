@@ -28,17 +28,16 @@
                 </div>
             </div>
         </div>
-        <div class="tombol">
-            <a href="{{ route('data-guru.create') }}" class="btn btn-primary mb-3 mt-0">Tambah Guru</a>
-        </div>
-        @if ($gurus->isEmpty())
-            <div class="alert alert-warning" role="alert">
-                Belum ada data Guru.
-            </div>
-        @else
-            <div class="page-content">
-                <div class="card">
-                    <div class="card-body">
+
+        <div class="page-content">
+            <div class="card">
+                <div class="card-body">
+                    <a href="{{ route('data-guru.create') }}" class="btn btn-primary mb-3">Tambah Guru</a>
+                    @if ($gurus->isEmpty())
+                        <div class="alert alert-warning" role="alert">
+                            Belum ada data Guru.
+                        </div>
+                    @else
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>
@@ -88,10 +87,10 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
+                    @endif
                 </div>
             </div>
-        @endif
+        </div>
         <x-footer></x-footer>
     </div>
 </x-layout-admin>
