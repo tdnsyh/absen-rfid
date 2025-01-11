@@ -30,7 +30,7 @@ class DashboardMapelController extends Controller
 
         Pelajaran::create($request->only('nama_pelajaran'));
 
-        return redirect()->route('mata-pelajaran.index')->with('success', 'Pelajaran berhasil ditambahkan.');
+        return redirect()->route('mata-pelajaran.index')->with('success', true)->with('message', 'Mata Pelajaran berhasil dibuat.');
     }
 
     public function edit($id)
@@ -49,7 +49,7 @@ class DashboardMapelController extends Controller
         $pelajaran = Pelajaran::findOrFail($id);
         $pelajaran->update($request->only('nama_pelajaran'));
 
-        return redirect()->route('mata-pelajaran.index')->with('success', 'Pelajaran berhasil diperbarui.');
+        return redirect()->route('mata-pelajaran.index')->with('success', true)->with('message', 'Mata Pelajaran berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -57,6 +57,6 @@ class DashboardMapelController extends Controller
         $pelajaran = Pelajaran::findOrFail($id);
         $pelajaran->delete();
 
-        return redirect()->route('mata-pelajaran.index')->with('success', 'Pelajaran berhasil dihapus.');
+        return redirect()->route('mata-pelajaran.index')->with('success', true)->with('message', 'Mata Pelajaran berhasil dihapus.');
     }
 }

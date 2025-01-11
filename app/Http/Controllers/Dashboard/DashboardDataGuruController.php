@@ -49,7 +49,7 @@ class DashboardDataGuruController extends Controller
             'alamat' => $request->alamat,
         ]);
 
-        return redirect()->route('data-guru.index')->with('success', 'Data Guru berhasil ditambahkan!');
+        return redirect()->route('data-guru.index')->with('success', true)->with('message', 'Guru berhasil dibuat.');
     }
 
 
@@ -93,13 +93,13 @@ class DashboardDataGuruController extends Controller
             'alamat' => $request->alamat,
         ]);
 
-        return redirect()->route('data-guru.index')->with('success', 'Data Guru Berhasil di Perbarui!');
+        return redirect()->route('data-guru.index')->with('success', true)->with('message', 'Guru berhasil diperbarui.');
     }
 
     public function destroy($id)
     {
         $guru = Guru::findOrFail($id);
         $guru->delete();
-        return redirect()->route('data-guru.index')->with('success', 'Data Guru Berhasil dihapus!');
+        return redirect()->route('data-guru.index')->with('success', true)->with('message', 'Guru berhasil dihapus.');
     }
 }

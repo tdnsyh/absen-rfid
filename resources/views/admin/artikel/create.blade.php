@@ -40,8 +40,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="isi_berita" class="form-label">Isi Berita</label>
-                            <div id="editor" style="height: 300px;" class="rounded-0"></div>
-                            <input type="hidden" id="isi_berita" name="isi_berita" required>
+                            <div id="isi_berita" name="isi_berita"></div>
+                            <input type="hidden" id="hidden-isi_berita" name="isi_berita" required>
                         </div>
                         <div class="mb-3">
                             <label for="penulis" class="form-label">Penulis</label>
@@ -55,6 +55,7 @@
                             <label for="gambar" class="form-label">Gambar</label>
                             <input type="file" class="form-control" id="gambar" name="gambar">
                         </div>
+
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </form>
                 </div>
@@ -62,15 +63,31 @@
         </div>
         <x-footer></x-footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
     <script>
-        const quill = new Quill('#editor', {
-            theme: 'snow'
-        });
-        document.querySelector('form').addEventListener('submit', function(e) {
-            const isiBerita = quill.root.innerHTML;
-            document.querySelector('#isi_berita').value = isiBerita;
+        $(document).ready(function() {
+            $('#isi_berita').summernote({
+                placeholder: 'Tulis berita Anda di sini...',
+                tabsize: 2,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+            $('form').submit(function() {
+                var isiBerita = $('#isi_berita').summernote('code');
+                $('#hidden-isi_berita').val(isiBerita);
+            });
         });
     </script>
 </x-layout-admin>

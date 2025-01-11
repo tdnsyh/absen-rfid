@@ -67,14 +67,20 @@
                                             <td>{{ $guru->tag_uid }}</td>
                                             <td>
                                                 <a href="{{ route('data-guru.show', $guru->id) }}"
-                                                    class="btn btn-info btn-sm">Show</a>
+                                                    class="btn btn-info btn-sm">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
                                                 <a href="{{ route('data-guru.edit', $guru->id) }}"
-                                                    class="btn btn-warning btn-sm">Edit</a>
+                                                    class="btn btn-warning btn-sm">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
                                                 <form action="{{ route('data-guru.destroy', $guru->id) }}"
                                                     method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="bi bi-trash"></i>
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>

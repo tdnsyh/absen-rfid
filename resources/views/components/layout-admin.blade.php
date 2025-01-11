@@ -14,7 +14,6 @@
     <link rel="stylesheet" crossorigin href="{{ asset('assets/compiled/css/app.css') }}">
     <link rel="stylesheet" crossorigin href="{{ asset('assets/compiled/css/app-dark.css') }}">
     <link rel="stylesheet" crossorigin href="{{ asset('assets/compiled/css/iconly.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
 
 </head>
 
@@ -30,7 +29,6 @@
     <script src="{{ asset('assets/static/js/components/dark.js') }}"></script>
     <script src="{{ asset('assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('assets/compiled/js/app.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 </body>
 
 </html>

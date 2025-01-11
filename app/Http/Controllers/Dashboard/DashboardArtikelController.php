@@ -49,7 +49,7 @@ class DashboardArtikelController extends Controller
 
         $artikel->save();
 
-        return redirect()->route('artikel.index')->with('success', 'Artikel berhasil dibuat.');
+        return redirect()->route('artikel.index')->with('success', true)->with('message', 'Artikel berhasil dibuat.');
     }
 
     public function edit($id)
@@ -85,7 +85,7 @@ class DashboardArtikelController extends Controller
         }
 
         $artikel->save();
-        return redirect()->route('artikel.index')->with('success', 'Artikel berhasil diperbarui.');
+        return redirect()->route('artikel.index')->with('success', true)->with('message', 'Artikel berhasil diperbarui!.');
     }
 
     public function destroy($id)
@@ -97,6 +97,6 @@ class DashboardArtikelController extends Controller
         }
 
         $artikel->delete();
-        return redirect()->route('artikel.index')->with('success', 'Artikel dan gambar berhasil dihapus.');
+        return redirect()->route('artikel.index')->with('success', true)->with('message', 'Artikel berhasil dihapus.');
     }
 }

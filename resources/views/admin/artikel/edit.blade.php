@@ -44,8 +44,8 @@
 
                         <div class="mb-3">
                             <label for="isi_berita" class="form-label">Isi Berita</label>
-                            <div id="editor" style="height: 300px;">{!! $artikel->isi_berita !!}</div>
-                            <textarea name="isi_berita" id="hidden-content" class="d-none"></textarea>
+                            <div id="isi_berita" name="isi_berita">{!! $artikel->isi_berita !!}</div>
+                            <input type="hidden" id="hidden-isi_berita" name="isi_berita" required>
                         </div>
 
                         <div class="mb-3">
@@ -76,21 +76,30 @@
         </div>
         <x-footer></x-footer>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote-lite.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const quill = new Quill("#editor", {
-                theme: "snow",
+        $(document).ready(function() {
+            $('#isi_berita').summernote({
+                placeholder: 'Tulis berita Anda di sini...',
+                tabsize: 2,
+                height: 120,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
             });
-
-            const form = document.querySelector("form");
-            const hiddenContent = document.querySelector("#hidden-content");
-
-            form.addEventListener("submit", function(event) {
-                hiddenContent.value = quill.root.innerHTML;
-
-                console.log("Form submitted!");
-                console.log("Hidden Content:", hiddenContent.value);
+            $('form').submit(function() {
+                var isiBerita = $('#isi_berita').summernote('code');
+                $('#hidden-isi_berita').val(isiBerita);
             });
         });
     </script>

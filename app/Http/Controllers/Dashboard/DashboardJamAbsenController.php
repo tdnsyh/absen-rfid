@@ -31,7 +31,7 @@ class DashboardJamAbsenController extends Controller
 
         JamAbsen::create($request->all());
 
-        return redirect()->route('jam-absen.index')->with('success', 'Jam Absen berhasil ditambahkan.');
+        return redirect()->route('jam-absen.index')->with('success', true)->with('message', 'Jam Absen berhasil dibuat.');
     }
 
     public function edit($id)
@@ -52,7 +52,7 @@ class DashboardJamAbsenController extends Controller
         $jamAbsen = JamAbsen::findOrFail($id);
         $jamAbsen->update($request->all());
 
-        return redirect()->route('jam-absen.index')->with('success', 'Jam Absen berhasil diubah.');
+        return redirect()->route('jam-absen.index')->with('success', true)->with('message', 'Jam Absen berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -60,6 +60,6 @@ class DashboardJamAbsenController extends Controller
         $jamAbsen = JamAbsen::findOrFail($id);
         $jamAbsen->delete();
 
-        return redirect()->route('jam-absen.index')->with('success', 'Jam Absen berhasil dihapus.');
+        return redirect()->route('jam-absen.index')->with('success', true)->with('message', 'Jam Absen berhasil dihapus.');
     }
 }
