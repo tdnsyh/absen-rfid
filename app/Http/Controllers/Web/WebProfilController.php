@@ -7,5 +7,9 @@ use Illuminate\Http\Request;
 
 class WebProfilController extends Controller
 {
-    //
+    public function index()
+    {
+        $title = 'profil';
+        return view('web.profil', compact('title'));
+    }
 }

@@ -7,5 +7,9 @@ use Illuminate\Http\Request;
 
 class WebKontakController extends Controller
 {
-    //
+    public function index()
+    {
+        $title = 'kontak';
+        return view('web.kontak', compact('title'));
+    }
 }
