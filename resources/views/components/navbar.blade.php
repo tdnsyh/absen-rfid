@@ -11,16 +11,16 @@
                 <div class="collapse navbar-collapse offcanvas-body position-relative" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="profil">Profil</a>
+                            <a class="nav-link {{ Request::is('profil') ? 'active' : '' }}" href="/profil">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="berita">Berita</a>
+                            <a class="nav-link {{ Request::is('berita') ? 'active' : '' }}" href="/berita">Berita</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="kontak">Kontak</a>
+                            <a class="nav-link {{ Request::is('kontak') ? 'active' : '' }}" href="/kontak">Kontak</a>
                         </li>
                     </ul>
                     <span class="navbar-text">
