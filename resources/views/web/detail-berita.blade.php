@@ -13,7 +13,7 @@
                         </div>
                         <h2 class="mb-0">Judul</h2>
                         <span class="text-black" style="font-size: 14px">berita</span>
-                        <p class="mb-0" style="font-size: 12px">Jumat, 20 Desember 2024</p>
+                        <p class="mb-1" style="font-size: 12px">Jumat, 20 Desember 2024</p>
                         <div class="card-body">
                             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sapiente explicabo quidem
                                 ea nostrum. Id veritatis accusamus perferendis tenetur modi vel sit molestias dolores
