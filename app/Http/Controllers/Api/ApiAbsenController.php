@@ -51,7 +51,7 @@ class ApiAbsenController extends Controller
         // Cek apakah sudah ada absensi untuk guru pada hari yang sama dan jam yang sama
         $existingAbsensi = Absensi::where('guru_id', $guru->id)
             ->where('tanggal', Carbon::today()->toDateString())
-            ->where('data_absen_id', $jamAbsen->id)
+            ->where('jam_absen_id', $jamAbsen->id)
             ->first();
 
         if ($existingAbsensi) {
@@ -65,7 +65,7 @@ class ApiAbsenController extends Controller
 
         $absensi = Absensi::create([
             'guru_id' => $guru->id,
-            'data_absen_id' => $jamAbsen->id,
+            'jam_absen_id' => $jamAbsen->id,
             'tanggal' => Carbon::today()->toDateString(),
         ]);
 

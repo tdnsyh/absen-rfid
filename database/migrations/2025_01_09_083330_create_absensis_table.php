@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('absensi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('guru_id')->constrained('guru')->onDelete('cascade');
-            $table->foreignId('data_absen_id')->constrained('jam_absen')->onDelete('cascade');
+            $table->foreignId('jam_absen_id')->constrained('jam_absen')->onDelete('cascade');
             $table->date('tanggal');
             $table->timestamps();
         });
