@@ -49,7 +49,7 @@
     </div>
 
     {{-- tentang sekolah --}}
-    <div class="py-5 mt-5">
+    <div class="mt-5">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
@@ -104,7 +104,7 @@
         </div>
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
-                <div class="card bg-secondary-subtle border-0 h-100">
+                <div class="card bg-primary-subtle border-0 h-100">
                     <div class="card-body">
                         <h4 class="bg-primary text-white rounded-circle text-center d-flex align-items-center justify-content-center"
                             style="width: 50px; height: 50px;">
@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card bg-secondary-subtle border-0 h-100">
+                <div class="card bg-success-subtle border-0 h-100">
                     <div class="card-body">
                         <h4 class="bg-success text-white rounded-circle text-center d-flex align-items-center justify-content-center"
                             style="width: 50px; height: 50px;">
@@ -128,7 +128,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card bg-secondary-subtle border-0 h-100">
+                <div class="card bg-info-subtle border-0 h-100">
                     <div class="card-body">
                         <h4 class="bg-info text-white rounded-circle text-center d-flex align-items-center justify-content-center"
                             style="width: 50px; height: 50px;">
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="col">
-                <div class="card bg-secondary-subtle border-0 h-100">
+                <div class="card bg-warning-subtle border-0 h-100">
                     <div class="card-body">
                         <h4 class="bg-warning text-white rounded-circle text-center d-flex align-items-center justify-content-center"
                             style="width: 50px; height: 50px;">
@@ -452,66 +452,5 @@
             </div>
         </div>
     </div>
-
-    {{-- bottom menu --}}
-    <div class="bg-dark">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-12 mb-3">
-                    <div class="text-white">
-                        <h2>SMK Al - Duka</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod placeat magnam culpa
-                            distinctio.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12 mb-3">
-                    <div class="text-white">
-                        <h4>Menu</h4>
-                        <p class="mb-0">
-                            <a href="/" class="text-decoration-none text-white">Home</a>
-                        </p>
-                        <p class="mb-0">
-                            <a href="profil" class="text-decoration-none text-white">Profil</a>
-                        </p>
-                        <p class="mb-0">
-                            <a href="berita" class="text-decoration-none text-white">Berita</a>
-                        </p>
-                        <p class="mb-0">
-                            <a href="kontak" class="text-decoration-none text-white">Kontak</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-12 mb-3">
-                    <div class="text-white">
-                        <h4>Social Media</h4>
-                        <p class="mb-0">
-                            <a href="/" class="text-decoration-none text-danger">
-                                <i class="bi bi-youtube fs-4 me-2"></i> Youtube
-                            </a>
-                        </p>
-                        <p class="mb-0">
-                            <a href="profil" class="text-decoration-none text-info">
-                                <i class="bi bi-instagram fs-4 me-2"></i> Instagram
-                            </a>
-                        </p>
-                        <p class="mb-0">
-                            <a href="berita" class="text-decoration-none text-white">
-                                <i class="bi bi-tiktok fs-4 me-2"></i> Tiktok
-                            </a>
-                        </p>
-                        <p class="mb-0">
-                            <a href="kontak" class="text-decoration-none text-success">
-                                <i class="bi bi-whatsapp fs-4 me-2"></i> WhatsApp
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- footer --}}
-    <div class="bg-black text-light py-3 text-center">
-        <p class="mb-0">&copy; 2025 Codemalaya. All Rights Reserved.</p>
-    </div>
+    <x-web-footer></x-web-footer>
 </x-layout-web>

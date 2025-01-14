@@ -1,6 +1,6 @@
 <div class="f">
     {{-- bottom menu --}}
-    <div class="bg-dark mt-3 mt-md-5">
+    <div class="bg-dark">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12 mb-3">

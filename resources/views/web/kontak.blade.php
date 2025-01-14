@@ -38,5 +38,5 @@
             </div>
         </div>
     </div>
-    <x-footer></x-footer>
+    <x-web-footer></x-web-footer>
 </x-layout-web>
