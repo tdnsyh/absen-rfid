@@ -29,11 +29,11 @@
                         @if (Route::has('login'))
                             <nav class="-mx-3 flex flex-1 justify-end">
                                 @auth
-                                    <a href="{{ url('/dashboard') }}" class="btn btn-primary">
+                                    <a href="{{ url('/dashboard') }}" class="btn btn-primary text-light">
                                         Dashboard
                                     </a>
                                 @else
-                                    <a href="{{ route('login') }}" class="btn btn-success">
+                                    <a href="{{ route('login') }}" class="btn btn-success text-light">
                                         Log in
                                     </a>
                                 @endauth
