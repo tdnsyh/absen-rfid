@@ -54,7 +54,7 @@
                                     @foreach ($gurus as $guru)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $guru->nama }}</td>
+                                            <td class="text-nowrap">{{ $guru->nama }}</td>
                                             <td>{{ $guru->nip }}</td>
                                             <td>
                                                 @if ($guru->detailGuru && $guru->detailGuru->pelajaran)

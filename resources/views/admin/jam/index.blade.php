@@ -42,20 +42,24 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Nama</th>
+                                        <th class="text-nowrap">Nama</th>
                                         <th>Jam Mulai</th>
                                         <th>Jam Selesai</th>
-                                        <th>Aksi</th>
+                                        <th class="text-nowrap">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($jamAbsens as $jamAbsen)
                                         <tr>
                                             <td>{{ $jamAbsen->id }}</td>
-                                            <td>{{ $jamAbsen->nama }}</td>
+                                            <td class="text-nowrap">{{ $jamAbsen->nama }}</td>
                                             <td>{{ $jamAbsen->jam_mulai }}</td>
                                             <td>{{ $jamAbsen->jam_selesai }}</td>
-                                            <td>
+                                            <td class="text-nowrap">
+                                                <a href="{{ route('jam-absen.edit', $jamAbsen->id) }}"
+                                                    class="btn btn-warning btn-sm">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
                                                 <form action="{{ route('jam-absen.destroy', $jamAbsen->id) }}"
                                                     method="POST" style="display:inline;">
                                                     @csrf
