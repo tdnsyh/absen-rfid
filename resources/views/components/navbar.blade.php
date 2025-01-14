@@ -2,7 +2,11 @@
     <div class="container">
         <nav class="navbar ukuran mt-4 navbar-expand-lg bg-primary-subtle rounded-3 p-2">
             <div class="container ms-2 me-2">
-                <a class="navbar-brand fw-bold" href="#">SMK Al - Duka</a>
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="Logo" width="30" height="24"
+                        class="d-inline-block align-text-top">
+                    SMK Niko Al- Farisi
+                </a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false"
                     aria-label="Toggle navigation">
