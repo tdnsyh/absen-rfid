@@ -34,27 +34,6 @@ class DashboardJamAbsenController extends Controller
         return redirect()->route('jam-absen.index')->with('success', true)->with('message', 'Jam Absen berhasil dibuat.');
     }
 
-    public function edit($id)
-    {
-        $jamAbsen = JamAbsen::findOrFail($id);
-        $title = "Edit Jam Absen";
-        return view('admin.jam.edit', compact('jamAbsen', 'title'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $request->validate([
-            'nama' => 'required|string|max:255',
-            'jam_mulai' => 'required|date_format:H:i',
-            'jam_selesai' => 'required|date_format:H:i',
-        ]);
-
-        $jamAbsen = JamAbsen::findOrFail($id);
-        $jamAbsen->update($request->all());
-
-        return redirect()->route('jam-absen.index')->with('success', true)->with('message', 'Jam Absen berhasil diperbarui.');
-    }
-
     public function destroy($id)
     {
         $jamAbsen = JamAbsen::findOrFail($id);

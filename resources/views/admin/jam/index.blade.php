@@ -56,10 +56,6 @@
                                             <td>{{ $jamAbsen->jam_mulai }}</td>
                                             <td>{{ $jamAbsen->jam_selesai }}</td>
                                             <td>
-                                                <a href="{{ route('jam-absen.edit', $jamAbsen->id) }}"
-                                                    class="btn btn-warning btn-sm">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
                                                 <form action="{{ route('jam-absen.destroy', $jamAbsen->id) }}"
                                                     method="POST" style="display:inline;">
                                                     @csrf

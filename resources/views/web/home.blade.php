@@ -2,41 +2,46 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
     {{-- hero section --}}
-    <div class="container mt-5">
-        <div class="row row-cols-1 row-cols-md-2 d-flex align-items-center g-4">
-            <div class="col">
-                <h5>
-                    Selamat datang! di
-                </h5>
-                <h1 class="display-1 fw-bold">
-                    SMK Al - Duka
-                </h1>
-                <h4>
-                    Rajin sekolah, tekun ibadah, masa depan cerah, hidup berkah.
-                </h4>
-                <a href="/" class="btn btn-outline-info mt-2">Selengkapnya</a>
+    <div class="container mt-5 text-center">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
             </div>
-            <div class="col">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="ratio ratio-4x3">
-                                <img src="https://images.unsplash.com/photo-1512253022256-19f4cb92a4dc?q=80&w=1427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    class="img-fluid rounded object-fit-cover" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="ratio ratio-4x3">
-                                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    class="img-fluid rounded object-fit-cover" alt="">
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="ratio ratio-4x3">
-                                <img src="https://images.unsplash.com/photo-1453733190371-0a9bedd82893?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                    class="img-fluid rounded object-fit-cover" alt="">
-                            </div>
-                        </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="ratio ratio-21x9">
+                        <img src="https://images.unsplash.com/photo-1623031178585-b6dfce5a5286?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="" class="object-fit-cover rounded">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Selamat datang di</h3>
+                        <h1 class="fw-bold shadow-lg display-3">SMK Niko Al - Farisi</h1>
+                        <p> Rajin sekolah, tekun ibadah, masa depan cerah, hidup berkah.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="ratio ratio-21x9">
+                        <img src="https://images.unsplash.com/photo-1672887774270-70a42c57655e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="" class="object-fit-cover rounded">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Second slide label</h5>
+                        <p>Some representative placeholder content for the second slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="ratio ratio-21x9">
+                        <img src="https://images.unsplash.com/photo-1672887774270-70a42c57655e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="" class="object-fit-cover rounded">
+                    </div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third slide label</h5>
+                        <p>Some representative placeholder content for the third slide.</p>
                     </div>
                 </div>
             </div>
@@ -44,7 +49,7 @@
     </div>
 
     {{-- tentang sekolah --}}
-    <div class="bg-body-tertiary py-5 mt-5">
+    <div class="py-5 mt-5">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
@@ -168,8 +173,8 @@
                                     komputer serta perangkat keras teknologi informasi.</p>
                             </div>
                             <div class="col-2">
-                                <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid" style="max-height: 300px"
-                                    alt="">
+                                <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
+                                    style="max-height: 300px" alt="">
                             </div>
                         </row>
                     </div>
@@ -448,10 +453,8 @@
         </div>
     </div>
 
-   
-
     {{-- bottom menu --}}
-    <div class="bg-dark mt-3 mt-md-5">
+    <div class="bg-dark">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12 mb-3">

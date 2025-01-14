@@ -34,7 +34,7 @@
                     <a href="{{ route('mata-pelajaran.create') }}" class="btn btn-primary mb-3">Tambah Pelajaran</a>
                     @if ($pelajaran->isEmpty())
                         <div class="alert alert-warning" role="alert">
-                            Belum ada Artikel.
+                            Belum ada Mata Pelajaran.
                         </div>
                     @else
                         <div class="table-responsive">
