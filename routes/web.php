@@ -45,7 +45,7 @@ Route::get('/api/cek-uid/{uid}', [ApiAbsenController::class, 'checkUid']);
 // home
 Route::get('/', [WebHomeController::class, 'index']);
 // profil
-Route::get('/profil', [WebProfilController::class, 'index']);
+Route::get('/profil', [WebProfilController::class, 'index'])->name('bebas');
 // berita
 Route::get('/berita', [WebBeritaController::class, 'index']);
 // detail-berita
