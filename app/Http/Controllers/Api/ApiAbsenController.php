@@ -14,14 +14,11 @@ class ApiAbsenController extends Controller
 {
     public function checkUid($uid)
     {
-        // Set timezone ke Jakarta
         date_default_timezone_set('Asia/Jakarta');
         Carbon::setLocale('id');
 
-        // Mencari guru berdasarkan UID
         $guru = Guru::where('tag_uid', $uid)->first();
 
-        // Jika guru tidak ditemukan
         if (!$guru) {
             return response()->json([
                 'success' => false,
@@ -29,7 +26,6 @@ class ApiAbsenController extends Controller
             ], 404);
         }
 
-        // Mengambil data jam absen
         $jamAbsen = JamAbsen::first();
 
         if (!$jamAbsen) {
@@ -39,20 +35,31 @@ class ApiAbsenController extends Controller
             ], 404);
         }
 
-        // Mendapatkan waktu mulai dan waktu selesai dari jam absen
         $jamMulai = Carbon::parse($jamAbsen->jam_mulai, 'Asia/Jakarta');
         $jamSelesai = Carbon::parse($jamAbsen->jam_selesai, 'Asia/Jakarta');
+        $batasAkhir = $jamSelesai->copy()->addHour();
         $waktuSekarang = Carbon::now('Asia/Jakarta');
 
-        // Cek apakah waktu sekarang berada dalam rentang waktu jam absen
-        if ($waktuSekarang < $jamMulai || $waktuSekarang > $jamSelesai) {
+        $isTelat = false;
+
+        if ($waktuSekarang < $jamMulai) {
             return response()->json([
                 'success' => false,
-                'message' => 'Absen hanya dapat dilakukan antara ' . $jamMulai->format('H:i') . ' dan ' . $jamSelesai->format('H:i')
+                'message' => 'Absen hanya dapat dilakukan mulai ' . $jamMulai->format('H:i')
             ], 400);
         }
 
-        // Cek apakah sudah ada absensi untuk guru pada hari yang sama dan jam yang sama
+        if ($waktuSekarang > $batasAkhir) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Absen sudah ditutup pada ' . $batasAkhir->format('H:i')
+            ], 400);
+        }
+
+        if ($waktuSekarang > $jamSelesai) {
+            $isTelat = true;
+        }
+
         $existingAbsensi = Absensi::where('guru_id', $guru->id)
             ->where('tanggal', Carbon::today('Asia/Jakarta')->toDateString())
             ->where('jam_absen_id', $jamAbsen->id)
@@ -67,28 +74,22 @@ class ApiAbsenController extends Controller
             ]);
         }
 
-        // Membuat data absensi baru
         $absensi = Absensi::create([
             'guru_id' => $guru->id,
             'jam_absen_id' => $jamAbsen->id,
             'tanggal' => Carbon::today('Asia/Jakarta')->toDateString(),
         ]);
 
-        // Membuat detail absensi
+        $keterangan = $isTelat ? 'telat' : 'hadir';
         $detailAbsensi = DetailAbsensi::create([
             'absensi_id' => $absensi->id,
             'jam_absen' => $waktuSekarang->toTimeString(),
-            'keterangan' => 'hadir',
+            'keterangan' => $keterangan,
         ]);
 
-        // Menentukan pesan berdasarkan jam absen
-        $currentHour = $waktuSekarang->hour;
-        if ($currentHour < 9) {
-            $message = 'Selamat datang ' . $guru->nama . ', terima kasih sudah melakukan absensi hari ini, selamat mengajar';
-        } elseif ($currentHour > 12) {
-            $message = 'Selamat datang ' . $guru->nama . ', terima kasih sudah melakukan absensi hari ini, selamat pulang';
-        } else {
-            $message = 'Selamat datang ' . $guru->nama . ', terima kasih sudah melakukan absensi hari ini';
+        $message = 'Selamat datang ' . $guru->nama . ', terima kasih sudah melakukan absensi hari ini';
+        if ($isTelat) {
+            $message .= '. Anda terlambat melakukan absensi.';
         }
 
         return response()->json([
