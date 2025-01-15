@@ -32,15 +32,15 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-2">
-                        <h4 class="card-title">Absensi hari ini</h4>
-                        <h4 class="total">Total Guru : </h4>
+                        <h4 class="card-title">Presensi hari ini</h4>
+                        <h4 class="total">Total Guru: {{ $totalGuru }}</h4>
                     </div>
                     <div class="row row-cols-2 row-cols-md-4">
                         <div class="col">
                             <div class="card text-white bg-success">
                                 <div class="card-body">
                                     <h5 class="card-title">Hadir</h5>
-                                    <p class="card-text">00</p>
+                                    <p class="card-text">{{ $hadirCount }}</p>
                                 </div>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                             <div class="card text-white bg-warning">
                                 <div class="card-body">
                                     <h5 class="card-title">Izin</h5>
-                                    <p class="card-text">00</p>
+                                    <p class="card-text">{{ $izinCount }}</p>
                                 </div>
                             </div>
                         </div>
@@ -56,7 +56,7 @@
                             <div class="card text-white bg-info">
                                 <div class="card-body">
                                     <h5 class="card-title">Sakit</h5>
-                                    <p class="card-text">00</p>
+                                    <p class="card-text">{{ $sakitCount }}</p>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                             <div class="card text-white bg-danger">
                                 <div class="card-body">
                                     <h5 class="card-title">Absen</h5>
-                                    <p class="card-text">00</p>
+                                    <p class="card-text">{{ $belumAbsenCount }}</p>
                                 </div>
                             </div>
                         </div>
@@ -74,44 +74,49 @@
                             <caption>History</caption>
                             <thead>
                                 <tr>
-                                    <th scope="col">No</th>
+                                    <th>No</th>
                                     <th scope="col">Nama</th>
-                                    <th scope="col" class="text-nowrap">Pelajaran</th>
-                                    <th scope="col">Masuk</th>
-                                    <th scope="col">Pulang</th>
+                                    <th scope="col">Jam Presensi</th>
                                     <th scope="col">Keterangan</th>
-                                    <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td class="text-nowrap">Matematika</td>
-                                    <td>07:00</td>
-                                    <td>16:00</td>
-                                    <td><span class="badge text-bg-success">Hadir</span></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-info">Detail</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td class="text-nowrap">Bahasa Inggris</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td><span class="badge text-bg-danger">Belum absen</span></td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-info">Detail</a>
-                                    </td>
-                                </tr>
+                                @forelse ($presensis as $index => $presensi)
+                                    <tr>
+                                        <th>{{ $index + 1 }}</th>
+                                        <td>{{ $presensi->guru->nama }}</td>
+                                        <td>{{ $presensi->jam_presensi->format('H:i:s') }}</td>
+                                        <td>
+                                            @if ($presensi->keterangan == 'Hadir')
+                                                <span class="badge text-bg-success">{{ $presensi->keterangan }}</span>
+                                            @elseif($presensi->keterangan == 'Telat')
+                                                <span class="badge text-bg-warning">{{ $presensi->keterangan }}</span>
+                                            @else
+                                                <span
+                                                    class="badge text-bg-secondary">{{ $presensi->keterangan }}</span>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td colspan="4" class="text-center">Tidak ada catatan presensi.</td>
+                                    </tr>
+                                @endforelse
+
+                                @foreach ($gurusNotPresent as $guru)
+                                    <tr>
+                                        <th scope="row">{{ $loop->iteration }}</th>
+                                        <td>{{ $guru->nama }}</td>
+                                        <td>-</td>
+                                        <td><span class="badge text-bg-danger">Belum Presensi</span></td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn btn-info mb-3">Detail</a>
+            <a href="{{ route('history.presensi') }}" class="btn btn-info mb-5">History Presensi</a>
         </div>
         <x-footer></x-footer>
     </div>

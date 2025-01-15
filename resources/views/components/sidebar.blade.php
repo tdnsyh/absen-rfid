@@ -56,10 +56,11 @@
                         <span>Guru</span>
                     </a>
                 </li>
-                <li class="sidebar-item {{ request()->is('absensi/*', 'absensi') ? 'active' : '' }}">
+                <li
+                    class="sidebar-item {{ request()->is('absensi/*', 'absensi', 'history', 'history/*') ? 'active' : '' }}">
                     <a href="/absensi" class='sidebar-link'>
                         <i class="bi bi-calendar-check"></i>
-                        <span>Absensi</span>
+                        <span>Presensi</span>
                     </a>
                 </li>
                 <li class="sidebar-title">Pusat Unduhan</li>

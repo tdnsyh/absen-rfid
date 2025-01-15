@@ -31,7 +31,58 @@
         <div class="page-content">
             <div class="card">
                 <div class="card-body">
-                    <p>Lorem, ipsum dolor.</p>
+                    <form action="{{ route('history.presensi') }}" method="GET" class="mb-3">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="tanggal">Tanggal:</label>
+                                <input type="date" name="tanggal" id="tanggal" class="form-control"
+                                    value="{{ request('tanggal') }}">
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="guru_id">Nama Guru:</label>
+                                <select name="guru_id" id="guru_id" class="form-control">
+                                    <option value="">Pilih Guru</option>
+                                    @foreach ($gurus as $guru)
+                                        <option value="{{ $guru->id }}"
+                                            {{ request('guru_id') == $guru->id ? 'selected' : '' }}>
+                                            {{ $guru->nama }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary mt-4">Filter</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="table-responsive">
+                        <table class="table ">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nama Guru</th>
+                                    <th>Tanggal</th>
+                                    <th>Jam Presensi</th>
+                                    <th>Keterangan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($presensis as $presensi)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $presensi->guru->nama }}</td>
+                                        <td>{{ $presensi->tanggal->format('d-m-Y') }}</td>
+                                        <td>{{ $presensi->jam_presensi->format('H:i:s') }}</td>
+                                        <td>{{ $presensi->keterangan }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                    {{ $presensis->links() }}
                 </div>
             </div>
         </div>

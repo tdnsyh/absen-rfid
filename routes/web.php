@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ApiAbsenController;
+use App\Http\Controllers\Api\ApiPresensiController;
 use App\Http\Controllers\Dashboard\DashboardArtikelController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\DashboardDataAbsensiController;
@@ -34,12 +35,14 @@ Route::middleware(['auth'])->group(function () {
 
     //can beres
     Route::get('absensi', [DashboardDataAbsensiController::class, 'index']);
+    Route::get('history', [DashboardDataAbsensiController::class, 'history'])->name('history.presensi');
     Route::get('pusat-unduhan', [DashboardPusatUnduhanController::class, 'index']);
     Route::resource('pengguna-sistem', DashboardUserController::class);
 });
 
 //api
 Route::get('/api/cek-uid/{uid}', [ApiAbsenController::class, 'checkUid']);
+Route::get('/api/presensi/{tag_uid}', [ApiPresensiController::class, 'absenByUid']);
 
 //web
 // home
