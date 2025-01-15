@@ -13,9 +13,12 @@ use App\Http\Controllers\Dashboard\DashboardUserController;
 use App\Http\Controllers\Web\WebHomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Dashboard\DashboardPengajuanController;
 use App\Http\Controllers\Web\WebBeritaController;
 use App\Http\Controllers\Web\WebKontakController;
+use App\Http\Controllers\Web\WebPengajuanController;
 use App\Http\Controllers\Web\WebProfilController;
+use Monolog\Processor\WebProcessor;
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -33,11 +36,14 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('jam-absen', DashboardJamAbsenController::class);
     Route::resource('artikel', DashboardArtikelController::class);
 
-    //can beres
     Route::get('absensi', [DashboardDataAbsensiController::class, 'index']);
     Route::get('history', [DashboardDataAbsensiController::class, 'history'])->name('history.presensi');
     Route::get('pusat-unduhan', [DashboardPusatUnduhanController::class, 'index']);
     Route::resource('pengguna-sistem', DashboardUserController::class);
+
+    Route::get('data-pengajuan', [DashboardPengajuanController::class, 'index'])->name('data-pengajuan.index');
+    Route::get('data-pengajuan/history', [DashboardPengajuanController::class, 'history'])->name('data-pengajuan.history');
+    Route::post('data-pengajuan/{id}/update-status/{status}', [DashboardPengajuanController::class, 'updateStatus'])->name('pengajuan.updateStatus');
 });
 
 //api
@@ -55,3 +61,8 @@ Route::get('/berita', [WebBeritaController::class, 'index']);
 Route::get('/detail-berita', [WebBeritaController::class, 'detail']);
 // kontak
 Route::get('/kontak', [WebKontakController::class, 'index']);
+
+
+Route::get('/pengajuan', [WebPengajuanController::class, 'index'])->name('pengajuan.index');
+Route::post('/pengajuan', [WebPengajuanController::class, 'store'])->name('pengajuan.store');
+Route::post('/cari-guru', [WebPengajuanController::class, 'searchGuru'])->name('pengajuan.searchGuru');

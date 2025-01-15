@@ -63,6 +63,12 @@
                         <span>Presensi</span>
                     </a>
                 </li>
+                <li class="sidebar-item {{ request()->is('data-pengajuan/*', 'data-pengajuan') ? 'active' : '' }}">
+                    <a href="/data-pengajuan" class='sidebar-link'>
+                        <i class="bi bi-info"></i>
+                        <span>Pengajuan</span>
+                    </a>
+                </li>
                 <li class="sidebar-title">Pusat Unduhan</li>
                 <li class="sidebar-item {{ request()->is('pusat-unduhan', 'pusat-unduhan/*') ? 'active' : '' }}">
                     <a href="/pusat-unduhan" class='sidebar-link'>
