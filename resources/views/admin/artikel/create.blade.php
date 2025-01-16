@@ -49,7 +49,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="kategori" class="form-label">Kategori</label>
-                            <input type="text" class="form-control" id="kategori" name="kategori" required>
+                            <select class="form-control" id="kategori" name="kategori" required>
+                                <option value="Artikel">Artikel</option>
+                                <option value="Berita">Berita</option>
+                                <option value="Prestasi">Prestasi</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="gambar" class="form-label">Gambar</label>

@@ -56,8 +56,14 @@
 
                         <div class="mb-3">
                             <label for="kategori" class="form-label">Kategori</label>
-                            <input type="text" class="form-control" id="kategori" name="kategori"
-                                value="{{ $artikel->kategori }}" required>
+                            <select class="form-control" id="kategori" name="kategori" required>
+                                <option value="Artikel" {{ $artikel->kategori == 'Artikel' ? 'selected' : '' }}>Artikel
+                                </option>
+                                <option value="Berita" {{ $artikel->kategori == 'Berita' ? 'selected' : '' }}>Berita
+                                </option>
+                                <option value="Prestasi" {{ $artikel->kategori == 'Prestasi' ? 'selected' : '' }}>
+                                    Prestasi</option>
+                            </select>
                         </div>
 
                         <div class="mb-3">

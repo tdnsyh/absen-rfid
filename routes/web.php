@@ -47,14 +47,13 @@ Route::middleware(['auth'])->group(function () {
 });
 
 //api
-Route::get('/api/cek-uid/{uid}', [ApiAbsenController::class, 'checkUid']);
 Route::get('/api/presensi/{tag_uid}', [ApiPresensiController::class, 'absenByUid']);
 
 //web
 Route::get('/', [WebHomeController::class, 'index']);
 Route::get('/profil', [WebProfilController::class, 'index'])->name('bebas');
 Route::get('/berita', [WebBeritaController::class, 'index']);
-Route::get('/detail-berita', [WebBeritaController::class, 'detail']);
+Route::get('/{kategori}/{id}/{judul}', [WebHomeController::class, 'detail'])->name('detail.berita');
 Route::get('/kontak', [WebKontakController::class, 'index']);
 
 

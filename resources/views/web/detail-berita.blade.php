@@ -5,61 +5,37 @@
         <div class="container mt-5">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="ratio ratio-21x9">
-                        <img src="https://images.unsplash.com/photo-1625111696958-792514071a8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            class="object-fit-cover rounded" alt="...">
+                    <div class="ratio ratio-16x9">
+                        <img src="{{ asset('images/' . $artikel->gambar) }}" class="object-fit-cover rounded"
+                            alt="{{ $artikel->judul }}">
                     </div>
-                    <h2 class="mb-0 mt-3">Judul</h2>
-                    <span class="text-black">berita</span>
-                    <p class="mb-1">Jumat, 20 Desember 2024</p>
+                    <h2 class="mb-3 mt-md-4 mt-3">{{ $artikel->judul }}</h2>
+                    <span class="text-black">{{ $artikel->kategori }}</span>
+                    <p class="mb-1">{{ $artikel->created_at->format('l, d F Y') }}</p>
                     <div class="card-body">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus sapiente explicabo quidem
-                            ea nostrum. Id veritatis accusamus perferendis tenetur modi vel sit molestias dolores
-                            voluptate, sed ducimus fuga architecto eos!</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias est ipsum,
-                            perspiciatis modi autem incidunt cupiditate dolore rerum! Unde totam vero accusamus
-                            dicta dolorum eum vitae pariatur nam in consequatur, nesciunt rerum recusandae error
-                            iste ratione repellat autem nihil deserunt vel adipisci corrupti quam. Perferendis
-                            assumenda voluptatum aspernatur? Quod, totam!</p>
+                        <p>{!! $artikel->isi_berita !!}</p>
                     </div>
                 </div>
                 <div class="col">
                     <h3 class="card-title mb-3">
                         Berita lainnya
                     </h3>
-                    <div class="card border-0 bg-body-tertiary shadow-sm mb-3">
-                        <div class="ratio ratio-21x9">
-                            <img src="https://images.unsplash.com/photo-1625111696958-792514071a8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="object-fit-cover card-img-top" alt="...">
+                    @foreach ($otherArticles as $otherArtikel)
+                        <div class="card border-0 bg-body-tertiary mb-3">
+                            <div class="ratio ratio-21x9">
+                                <img src="{{ asset('images/' . $otherArtikel->gambar) }}"
+                                    class="object-fit-cover card-img-top" alt="...">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ Str::limit($otherArtikel->judul, 50) }}</h5>
+                                <a href="{{ route('detail.berita', ['kategori' => $otherArtikel->kategori, 'id' => $otherArtikel->id, 'judul' => Str::slug($otherArtikel->judul)]) }}"
+                                    class="btn btn-sm btn-primary">Selengkapnya</a>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste esse, a consequuntur illo
-                                quisquam amet? Nesciunt sint ex rerum sed.</p>
-                        </div>
-                    </div>
-                    <div class="card border-0 bg-body-tertiary shadow-sm mb-3">
-                        <div class="ratio ratio-21x9">
-                            <img src="https://images.unsplash.com/photo-1625111696958-792514071a8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="object-fit-cover card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste esse, a consequuntur illo
-                                quisquam amet? Nesciunt sint ex rerum sed.</p>
-                        </div>
-                    </div>
-                    <div class="card border-0 bg-body-tertiary shadow-sm mb-3">
-                        <div class="ratio ratio-21x9">
-                            <img src="https://images.unsplash.com/photo-1625111696958-792514071a8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="object-fit-cover card-img-top" alt="...">
-                        </div>
-                        <div class="card-body">
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste esse, a consequuntur illo
-                                quisquam amet? Nesciunt sint ex rerum sed.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
-    <x-footer></x-footer>
+    <x-web-footer></x-web-footer>
 </x-layout-web>

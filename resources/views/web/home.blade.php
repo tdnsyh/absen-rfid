@@ -360,97 +360,49 @@
                 <div class="col-12 col-md-4 mb-3">
                     <h3 class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">Prestasi
                     </h3>
-                    <div class="card border-0 bg-body-tertiary mb-3">
-                        <div class="ratio ratio-16x9">
-                            <img src="https://images.unsplash.com/photo-1625111696958-792514071a8f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-top object-fit-cover" alt="">
+                    @foreach ($artikels->where('kategori', 'Prestasi')->take(2) as $artikel)
+                        <div class="card border-0 bg-body-tertiary mb-3">
+                            <div class="ratio ratio-16x9">
+                                <img src="{{ asset('images/' . $artikel->gambar) }}"
+                                    class="card-img-top object-fit-cover" alt="">
+                            </div>
+                            <div class="card-body">
+                                <span class="badge text-bg-success">Prestasi</span>
+                                <h5 class="card-title mt-2">{{ $artikel->judul }}</h5>
+                                <a href="{{ route('detail.berita', ['kategori' => 'Prestasi', 'id' => $artikel->id, 'judul' => Str::slug($artikel->judul)]) }}"
+                                    class="btn btn-outline-success mt-2">Selengkapnya</a>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <span class="badge text-bg-success">Prestasi</span>
-                            <h5 class="card-title mt-2">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, harum.
-                            </h5>
-                            <a href="/" class="btn btn-outline-success mt-2">Selengkapnya</a>
-                        </div>
-                    </div>
-                    <div class="card border-0 bg-body-tertiary mb-3">
-                        <div class="ratio ratio-16x9">
-                            <img src="https://images.unsplash.com/photo-1648518295678-f78670c35924?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="card-img-top object-fit-cover" alt="">
-                        </div>
-                        <div class="card-body">
-                            <span class="badge text-bg-success text-white">Prestasi</span>
-                            <h5 class="card-title mt-2">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, harum.
-                            </h5>
-                            <a href="/" class="btn btn-outline-success mt-2">Selengkapnya</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 {{-- berita --}}
                 <div class="col-12 col-md-8">
                     <h3 class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">Berita
                     </h3>
-                    <div class="card border-0 bg-body-tertiary mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <div class="ratio ratio-1x1">
-                                    <img src="https://images.unsplash.com/photo-1625111381856-5cdedf9ae7a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                        class="img-fluid rounded-start" style="object-fit: cover;"
-                                        alt="Gambar ilustrasi">
+                    @foreach ($berita as $artikel)
+                        <div class="card border-0 bg-body-tertiary mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="ratio ratio-1x1">
+                                        <img src="{{ asset('images/' . $artikel->gambar) }}"
+                                            class="img-fluid rounded-start" style="object-fit: cover;"
+                                            alt="Gambar ilustrasi">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <span class="badge text-bg-primary text-white mb-2 mt-2">Akademik</span>
-                                    <p class="text-secondary mb-0">Kamis, 09 Januari 2024</p>
-                                    <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                        elit. Incidunt assumenda nostrum molestias.</h5>
-                                    <a href="/" class="btn btn-outline-primary mt-2">Selengkapnya</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-0 bg-body-tertiary mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <div class="ratio ratio-1x1">
-                                    <img src="https://images.unsplash.com/photo-1561476591-c5805d714b91?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                        class="img-fluid rounded-start" style="object-fit: cover;"
-                                        alt="Gambar ilustrasi">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <span class="badge text-bg-warning text-white mb-2 mt-2">Berita</span>
-                                    <p class="text-secondary mb-0">Kamis, 09 Januari 2024</p>
-                                    <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                        elit. Incidunt assumenda nostrum molestias.</h5>
-                                    <a href="/" class="btn btn-outline-warning mt-2">Selengkapnya</a>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <span
+                                            class="badge text-bg-primary text-white mb-2 mt-2">{{ $artikel->kategori }}</span>
+                                        <p class="text-secondary mb-0">{{ $artikel->created_at->format('l, d F Y') }}
+                                        </p>
+                                        <h5 class="card-title">{{ $artikel->judul }}</h5>
+                                        <a href="{{ route('detail.berita', ['kategori' => $artikel->kategori, 'id' => $artikel->id, 'judul' => Str::slug($artikel->judul)]) }}"
+                                            class="btn btn-outline-primary mt-2">Selengkapnya</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card border-0 bg-body-tertiary mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <div class="ratio ratio-1x1">
-                                    <img src="https://images.unsplash.com/photo-1625111381887-458fce74a923?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                        class="img-fluid rounded-start" style="object-fit: cover;"
-                                        alt="Gambar ilustrasi">
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <span class="badge text-bg-info text-white mb-2 mt-2">Artikel</span>
-                                    <p class="text-secondary mb-0">Kamis, 09 Januari 2024</p>
-                                    <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing
-                                        elit. Incidunt assumenda nostrum molestias.</h5>
-                                    <a href="/" class="btn btn-outline-info mt-2">Selengkapnya</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="text-center">
