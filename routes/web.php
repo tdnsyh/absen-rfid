@@ -53,7 +53,7 @@ Route::get('/api/presensi/{tag_uid}', [ApiPresensiController::class, 'absenByUid
 Route::get('/', [WebHomeController::class, 'index']);
 Route::get('/profil', [WebProfilController::class, 'index'])->name('bebas');
 Route::get('/berita', [WebBeritaController::class, 'index']);
-Route::get('/{kategori}/{id}/{judul}', [WebHomeController::class, 'detail'])->name('detail.berita');
+Route::get('/berita/{kategori}/{id}/{judul}', [WebHomeController::class, 'detail'])->name('detail.berita');
 Route::get('/kontak', [WebKontakController::class, 'index']);
 
 
