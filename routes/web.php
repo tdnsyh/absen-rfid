@@ -51,15 +51,10 @@ Route::get('/api/cek-uid/{uid}', [ApiAbsenController::class, 'checkUid']);
 Route::get('/api/presensi/{tag_uid}', [ApiPresensiController::class, 'absenByUid']);
 
 //web
-// home
 Route::get('/', [WebHomeController::class, 'index']);
-// profil
 Route::get('/profil', [WebProfilController::class, 'index'])->name('bebas');
-// berita
 Route::get('/berita', [WebBeritaController::class, 'index']);
-// detail-berita
 Route::get('/detail-berita', [WebBeritaController::class, 'detail']);
-// kontak
 Route::get('/kontak', [WebKontakController::class, 'index']);
 
 

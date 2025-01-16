@@ -62,13 +62,14 @@
                                                     action="{{ route('pengajuan.updateStatus', ['id' => $pengajuan->id, 'status' => 'approved']) }}"
                                                     method="POST" style="display:inline;">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-success">Setujui</button>
+                                                    <button type="submit"
+                                                        class="btn btn-success btn-sm">Setujui</button>
                                                 </form>
                                                 <form
                                                     action="{{ route('pengajuan.updateStatus', ['id' => $pengajuan->id, 'status' => 'rejected']) }}"
                                                     method="POST" style="display:inline;">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-danger">Tolak</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm">Tolak</button>
                                                 </form>
                                             @else
                                                 <span

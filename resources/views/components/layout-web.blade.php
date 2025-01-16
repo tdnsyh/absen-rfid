@@ -24,9 +24,13 @@
         font-family: "Nunito", serif;
         font-style: normal;
     }
+
+    .custom {
+        background-color: #f2f7ff;
+    }
 </style>
 
-<body style="background-color: ##f2f7ff">
+<body class="custom">
     <div class="konten body">
         {{ $slot }}
     </div>

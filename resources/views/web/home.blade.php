@@ -80,11 +80,12 @@
                     <div class="j">
                         <span class="badge text-bg-primary">About</span>
                         <div class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">
-                            Tentang SMK Al - Duka
+                            Tentang SMK Niko Al - Farisi
                         </div>
                     </div>
                     <p>
-                        SMK Al-Huda adalah sebuah Sekolah Menengah Kejuruan yang berkomitmen untuk mencetak generasi
+                        SMK Niko Al - Farisi adalah sebuah Sekolah Menengah Kejuruan yang berkomitmen untuk mencetak
+                        generasi
                         unggul melalui pendidikan berbasis keterampilan dan keahlian sesuai kebutuhan dunia kerja.
                         Dengan fasilitas yang memadai, tenaga pendidik profesional, dan berbagai program kejuruan, SMK
                         Al-Huda mendukung siswa untuk mengembangkan potensi akademik dan keterampilan praktis. Sekolah
@@ -100,7 +101,7 @@
     <div class="mt-5 container">
         <span class="badge text-bg-primary">Why</span>
         <div class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">
-            Kenapa harus SMK Al- Duka?
+            Kenapa harus SMK Niko Al - Farisi?
         </div>
         <div class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
@@ -159,7 +160,7 @@
         <div class="text-center">
             <span class="badge text-bg-primary">Why</span>
             <div class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">
-                Jurusan di SMK Al - Duka
+                Jurusan di SMK Niko Al - Farisi
             </div>
         </div>
         <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -242,7 +243,7 @@
         <div class="text-center">
             <span class="badge text-bg-primary">Why</span>
             <div class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">
-                Alumni SMK Al - Duka
+                Alumni SMK Niko Al - Farisi
             </div>
         </div>
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -267,7 +268,8 @@
                                     style="max-height: 150px" alt="">
                                 <h5 class="mb-0">Siti Aisyah</h5>
                                 <figcaption class="figure-caption">PT. Astra Honda Motor</figcaption>
-                                <p class="card-text mt-2 alumni">Saya sangat berterima kasih kepada SMK Alhuda atas
+                                <p class="card-text mt-2 alumni">Saya sangat berterima kasih kepada SMK Niko Al -
+                                    Farisi atas
                                     pengalaman
                                     belajar yang luar biasa.</p>
                             </div>
@@ -278,7 +280,8 @@
                                     style="max-height: 150px" alt="">
                                 <h5 class="mb-0">Budi Santoso</h5>
                                 <figcaption class="figure-caption">Bank BCA</figcaption>
-                                <p class="card-text mt-2 alumni">Pengalaman di SMK Alhuda membantu saya memiliki
+                                <p class="card-text mt-2 alumni">Pengalaman di SMK Niko Al - Farisi membantu saya
+                                    memiliki
                                     mentalitas
                                     kerja yang kuat.</p>
                             </div>
@@ -304,7 +307,8 @@
                                     style="max-height: 150px" alt="">
                                 <h5 class="mb-0">Rudi Hartono</h5>
                                 <figcaption class="figure-caption">PT. PLN (Persero)</figcaption>
-                                <p class="card-text mt-2 alumni">SMK Alhuda memberikan pendidikan berbasis praktik yang
+                                <p class="card-text mt-2 alumni">SMK Niko Al - Farisi memberikan pendidikan berbasis
+                                    praktik yang
                                     sangat
                                     relevan dengan industri.</p>
                             </div>
@@ -326,7 +330,8 @@
                                     style="max-height: 150px" alt="">
                                 <h5 class="mb-0">Ahmad Fauzi</h5>
                                 <figcaption class="figure-caption">PT. Garuda Indonesia</figcaption>
-                                <p class="card-text mt-2 alumni">Belajar di SMK Alhuda adalah keputusan terbaik yang
+                                <p class="card-text mt-2 alumni">Belajar di SMK Niko Al - Farisi adalah keputusan
+                                    terbaik yang
                                     pernah
                                     saya ambil.</p>
                             </div>
@@ -337,7 +342,8 @@
                                     style="max-height: 150px" alt="">
                                 <h5 class="mb-0">Laila Amalia</h5>
                                 <figcaption class="figure-caption">PT. Pertamina (Persero)</figcaption>
-                                <p class="card-text mt-2 alumni">SMK Alhuda menginspirasi saya untuk terus belajar dan
+                                <p class="card-text mt-2 alumni">SMK Niko Al - Farisi menginspirasi saya untuk terus
+                                    belajar dan
                                     berkembang di dunia profesional.</p>
                             </div>
                         </div>
