@@ -2,48 +2,16 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
     {{-- hero section --}}
-    <div class="container mt-5 text-center">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
+    <div class="container mt-5 mt-md-0">
+        <div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+            <div class="col">
+                <h2>Selamat datang di</h2>
+                <p class="display-4 text-primary fw-bold mb-0">SMK Niko Al - Farisi</p>
+                <h4>Rajin sekolah, tekun ibadah, masa depan cerah, hidup berkah.</h4>
+                <a href="/" class="btn btn-outline-primary mt-2">Daftar Sekarang</a>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="ratio ratio-21x9">
-                        <img src="https://images.unsplash.com/photo-1623031178585-b6dfce5a5286?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="" class="object-fit-cover rounded">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h3>Selamat datang di</h3>
-                        <h1 class="fw-bold shadow-lg display-3">SMK Niko Al - Farisi</h1>
-                        <p> Rajin sekolah, tekun ibadah, masa depan cerah, hidup berkah.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="ratio ratio-21x9">
-                        <img src="https://images.unsplash.com/photo-1672887774270-70a42c57655e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="" class="object-fit-cover rounded">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="ratio ratio-21x9">
-                        <img src="https://images.unsplash.com/photo-1672887774270-70a42c57655e?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                            alt="" class="object-fit-cover rounded">
-                    </div>
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
+            <div class="col d-none d-md-block">
+                <img src="assets/img/udin.png" alt="" class="img-fluid">
             </div>
         </div>
     </div>
@@ -212,75 +180,20 @@
                 Jurusan di SMK Niko Al - Farisi
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <div class="card h-100 bg-body-tertiary border-0">
-                    <div class="card-body">
-                        <row class="row row-cols-2 p-3">
-                            <div class="col-10">
-                                <h3>Teknik Komputer dan Jaringan (TKJ)</h3>
-                                <p>Membekali siswa dengan kemampuan merancang, mengelola, dan memperbaiki jaringan
-                                    komputer serta perangkat keras teknologi informasi.</p>
-                            </div>
-                            <div class="col-2">
-                                <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
-                                    style="max-height: 300px" alt="">
-                            </div>
-                        </row>
+        <div class="card h-100 bg-tertiary border-0">
+            <div class="card-body">
+                <div class="row p-3 align-items-center">
+                    <div class="col-12 col-md-6 order-2 order-md-1 mt-3 mt-md-0">
+                        <h3>Bisnis Daring dan Pemasaran (BDP)</h3>
+                        <p>
+                            Jurusan Bisnis Daring dan Pemasaran (BDP) di SMK Niko Al - Farisi mengajarkan strategi
+                            pemasaran modern, pengelolaan toko online, dan teknik promosi digital. Siswa dibekali
+                            keterampilan bisnis dan wirausaha untuk bersaing di era digital.
+                        </p>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 bg-body-tertiary border-0">
-                    <div class="card-body">
-                        <row class="row row-cols-2 p-3">
-                            <div class="col-10">
-                                <h3>Akuntansi dan Keuangan Lembaga (AKL)</h3>
-                                <p>
-                                    Mengajarkan keterampilan pencatatan keuangan, penyusunan laporan akuntansi, dan
-                                    pengelolaan keuangan perusahaan sesuai standar.</p>
-                            </div>
-                            <div class="col-2">
-                                <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
-                                    style="max-height: 300px" alt="">
-                            </div>
-                        </row>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 bg-body-tertiary border-0">
-                    <div class="card-body">
-                        <row class="row row-cols-2 p-3">
-                            <div class="col-10">
-                                <h3>Teknik Kendaraan Ringan Otomotif (TKRO)</h3>
-                                <p>
-                                    Menyiapkan siswa dengan keahlian dalam perawatan, perbaikan, dan diagnosis kendaraan
-                                    bermotor ringan.</p>
-                            </div>
-                            <div class="col-2">
-                                <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
-                                    style="max-height: 300px" alt="">
-                            </div>
-                        </row>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 bg-body-tertiary border-0">
-                    <div class="card-body">
-                        <row class="row row-cols-2 p-3">
-                            <div class="col-10">
-                                <h3>Tata Busana</h3>
-                                <p>
-                                    Memberikan pengetahuan dan keterampilan tentang desain, pembuatan, dan pemasaran
-                                    pakaian sesuai dengan tren mode.</p>
-                            </div>
-                            <div class="col-2">
-                                <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
-                                    style="max-height: 300px" alt="">
-                            </div>
-                        </row>
+                    <div class="col-12 col-md-6 text-center order-1 order-md-2">
+                        <img src="{{ asset('assets/img/jurusan.png') }}" class="img-fluid"
+                            style="max-height: 300px; object-fit: cover;" alt="Bisnis Daring dan Pemasaran">
                     </div>
                 </div>
             </div>
@@ -410,7 +323,7 @@
                     <h3 class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">Prestasi
                     </h3>
                     @foreach ($artikels->where('kategori', 'Prestasi')->take(2) as $artikel)
-                        <div class="card border-0 bg-body-tertiary mb-3">
+                        <div class="card border-0 bg-body-tertiary mb-3 border-bottom border-3 border-success">
                             <div class="ratio ratio-16x9">
                                 <img src="{{ asset('images/' . $artikel->gambar) }}"
                                     class="card-img-top object-fit-cover" alt="">
@@ -434,7 +347,7 @@
                                 <div class="col-md-4">
                                     <div class="ratio ratio-1x1">
                                         <img src="{{ asset('images/' . $artikel->gambar) }}"
-                                            class="img-fluid rounded-start" style="object-fit: cover;"
+                                            class="img-fluid rounded" style="object-fit: cover;"
                                             alt="Gambar ilustrasi">
                                     </div>
                                 </div>

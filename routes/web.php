@@ -38,7 +38,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('absensi', [DashboardDataAbsensiController::class, 'index']);
     Route::get('history', [DashboardDataAbsensiController::class, 'history'])->name('history.presensi');
-    Route::get('pusat-unduhan', [DashboardPusatUnduhanController::class, 'index']);
     Route::resource('pengguna-sistem', DashboardUserController::class);
 
     Route::get('data-pengajuan', [DashboardPengajuanController::class, 'index'])->name('data-pengajuan.index');

@@ -9,7 +9,7 @@ class WebKontakController extends Controller
 {
     public function index()
     {
-        $title = 'kontak';
+        $title = 'Kontak kami';
         return view('web.kontak', compact('title'));
     }
 }

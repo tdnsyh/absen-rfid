@@ -29,7 +29,7 @@ class WebBeritaController extends Controller
             ->take(3)
             ->get();
 
-        $title = 'Detail';
+        $title = $artikel->judul;
         return view('web.detail-berita', compact('artikel', 'title', 'otherArticles'));
     }
 }

@@ -58,8 +58,9 @@
                         </div>
                     </form>
 
-                    <div class="table-responsive">
-                        <table class="table ">
+                    <div class="table-responsive mt-3">
+                        <button onclick="downloadExcel()" class="btn btn-outline-success mb-3">Download Excel</button>
+                        <table class="table" id="presensiTable">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -88,4 +89,14 @@
         </div>
         <x-footer></x-footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+    <script>
+        function downloadExcel() {
+            var table = document.getElementById("presensiTable");
+            var wb = XLSX.utils.table_to_book(table, {
+                sheet: "Sheet 1"
+            });
+            XLSX.writeFile(wb, "Presensi_Data.xlsx");
+        }
+    </script>
 </x-layout-admin>

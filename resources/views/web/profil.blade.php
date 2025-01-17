@@ -2,13 +2,11 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <x-navbar></x-navbar>
     <div class="mt-5 container">
-        <div class=" border-0">
-            <div class="text-center">
-                <h1>Tentang</h1>
-                <h1 class="fw-bolder display-2">
-                    SMK Niko Al - Farisi
-                </h1>
-            </div>
+        <div class="text-center">
+            <h1>Tentang</h1>
+            <h1 class="fw-bolder display-2">
+                SMK Niko Al - Farisi
+            </h1>
         </div>
         <div class="text-center row row-cols-2 row-cols-md-4 d-flex align-items-center mt-3">
             <div class="col">
@@ -245,7 +243,10 @@
                 <div class="card border-0 bg-tertiary">
                     <div class="card-body">
                         <div style="text-align: justify" class="p-3">
-                            <h1 class="fw-bold mb-3">Sejarah Singkat</h1>
+                            <div
+                                class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">
+                                Sejarah Singkat
+                            </div>
                             <p>
                                 SMK Niko Al-Farisi adalah lembaga pendidikan di bawah naungan Yayasan Darusshoba
                                 Al-Muwaddah
@@ -301,79 +302,23 @@
                             Jurusan di SMK Al - Duka
                         </div>
                     </div>
-                    <div class="row g-4">
-                        <div class="col-12 col-md-6">
-                            <div class="card h-100 bg-tertiary border-0">
-                                <div class="card-body">
-                                    <row class="row row-cols-2 p-3">
-                                        <div class="col-10">
-                                            <h3>Teknik Komputer dan Jaringan (TKJ)</h3>
-                                            <p>Membekali siswa dengan kemampuan merancang, mengelola, dan
-                                                memperbaiki jaringan
-                                                komputer serta perangkat keras teknologi informasi.</p>
-                                        </div>
-                                        <div class="col-2">
-                                            <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
-                                                style="max-height: 300px" alt="">
-                                        </div>
-                                    </row>
+                    <div class="card h-100 bg-tertiary border-0">
+                        <div class="card-body">
+                            <div class="row p-3 align-items-center">
+                                <div class="col-12 col-md-6 order-2 order-md-1 mt-3 mt-md-0">
+                                    <h3>Bisnis Daring dan Pemasaran (BDP)</h3>
+                                    <p>
+                                        Jurusan Bisnis Daring dan Pemasaran (BDP) di SMK Niko Al - Farisi mengajarkan
+                                        strategi
+                                        pemasaran modern, pengelolaan toko online, dan teknik promosi digital. Siswa
+                                        dibekali
+                                        keterampilan bisnis dan wirausaha untuk bersaing di era digital.
+                                    </p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="card h-100 bg-tertiary border-0">
-                                <div class="card-body">
-                                    <row class="row row-cols-2 p-3">
-                                        <div class="col-10">
-                                            <h3>Akuntansi dan Keuangan Lembaga (AKL)</h3>
-                                            <p>
-                                                Mengajarkan keterampilan pencatatan keuangan, penyusunan laporan
-                                                akuntansi, dan
-                                                pengelolaan keuangan perusahaan sesuai standar.</p>
-                                        </div>
-                                        <div class="col-2">
-                                            <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
-                                                style="max-height: 300px" alt="">
-                                        </div>
-                                    </row>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="card h-100 bg-tertiary border-0">
-                                <div class="card-body">
-                                    <row class="row row-cols-2 p-3">
-                                        <div class="col-10">
-                                            <h3>Teknik Kendaraan Ringan Otomotif (TKRO)</h3>
-                                            <p>
-                                                Menyiapkan siswa dengan keahlian dalam perawatan, perbaikan, dan
-                                                diagnosis kendaraan
-                                                bermotor ringan.</p>
-                                        </div>
-                                        <div class="col-2">
-                                            <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
-                                                style="max-height: 300px" alt="">
-                                        </div>
-                                    </row>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="card h-100 bg-tertiary border-0">
-                                <div class="card-body">
-                                    <row class="row row-cols-2 p-3">
-                                        <div class="col-10">
-                                            <h3>Tata Busana</h3>
-                                            <p>
-                                                Memberikan pengetahuan dan keterampilan tentang desain,
-                                                pembuatan, dan pemasaran
-                                                pakaian sesuai dengan tren mode.</p>
-                                        </div>
-                                        <div class="col-2">
-                                            <img src="{{ asset('assets/img/tkr.png') }}" class="img-fluid"
-                                                style="max-height: 300px" alt="">
-                                        </div>
-                                    </row>
+                                <div class="col-12 col-md-6 text-center order-1 order-md-2">
+                                    <img src="{{ asset('assets/img/jurusan.png') }}" class="img-fluid"
+                                        style="max-height: 300px; object-fit: cover;"
+                                        alt="Bisnis Daring dan Pemasaran">
                                 </div>
                             </div>
                         </div>

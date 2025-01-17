@@ -18,7 +18,7 @@
         <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
             @foreach ($artikels as $artikel)
                 <div class="col">
-                    <div class="card mb-3 border-0 h-100">
+                    <div class="card border-0">
                         <div class="row g-0">
                             <div class="col-md-4">
                                 <img src="{{ asset('images/' . $artikel->gambar) }}"
@@ -27,11 +27,21 @@
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <div class="d-flex gap-2 mb-0">
-                                        <span class="badge text-white bg-warning h-50">{{ $artikel->kategori }}</span>
+                                        @php
+                                            $warnaBadge = match ($artikel->kategori) {
+                                                'Prestasi' => 'bg-success',
+                                                'Berita' => 'bg-primary',
+                                                'Artikel' => 'bg-warning',
+                                                default => 'bg-secondary',
+                                            };
+                                        @endphp
+                                        <span class="badge text-white {{ $warnaBadge }} h-50">
+                                            {{ $artikel->kategori }}
+                                        </span>
                                         <p class="text-secondary">{{ $artikel->created_at->format('l, d F Y') }}</p>
                                     </div>
                                     <h5 class="card-title mb-0">{{ $artikel->judul }}</h5>
-                                    <p class="card-text">
+                                    <p class="card-text mt-2">
                                         {!! Str::limit(strip_tags($artikel->isi_berita), 100) !!}...
                                         <a href="{{ route('detail.berita', ['kategori' => $artikel->kategori, 'id' => $artikel->id, 'judul' => Str::slug($artikel->judul)]) }}"
                                             class="link-underline link-underline-opacity-0">
