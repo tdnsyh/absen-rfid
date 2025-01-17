@@ -10,7 +10,7 @@ class WebHomeController extends Controller
 {
     public function index()
     {
-        $title = 'Home';
+        $title = 'SMK Niko Al - Farisi';
         $artikels = Artikel::where('kategori', 'Prestasi')->limit(2)->get();
         $berita = Artikel::whereIn('kategori', ['Berita', 'Artikel'])->limit(3)->get();
         return view('web.home', compact('title', 'artikels', 'berita'));

@@ -56,19 +56,19 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <div class="ratio ratio-21x9">
+                                <div class="ratio ratio-4x3">
                                     <img src="https://images.unsplash.com/photo-1512253022256-19f4cb92a4dc?q=80&w=1427&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                         class="img-fluid rounded object-fit-cover" alt="">
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="ratio ratio-21x9">
+                                <div class="ratio ratio-4x3">
                                     <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                         class="img-fluid rounded object-fit-cover" alt="">
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <div class="ratio ratio-21x9">
+                                <div class="ratio ratio-4x3">
                                     <img src="https://images.unsplash.com/photo-1453733190371-0a9bedd82893?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                                         class="img-fluid rounded object-fit-cover" alt="">
                                 </div>
@@ -84,13 +84,62 @@
                         </div>
                     </div>
                     <p>
-                        SMK Niko Al - Farisi adalah sebuah Sekolah Menengah Kejuruan yang berkomitmen untuk mencetak
-                        generasi
-                        unggul melalui pendidikan berbasis keterampilan dan keahlian sesuai kebutuhan dunia kerja.
-                        Dengan fasilitas yang memadai, tenaga pendidik profesional, dan berbagai program kejuruan, SMK
-                        Al-Huda mendukung siswa untuk mengembangkan potensi akademik dan keterampilan praktis. Sekolah
-                        ini juga menanamkan nilai-nilai keagamaan dan karakter untuk membentuk lulusan yang kompeten,
-                        berakhlak mulia, dan siap bersaing di era global.
+                        SMK Niko Al-Farisi adalah institusi pendidikan kejuruan yang dikelola oleh Yayasan Darusshoba
+                        Al-Muwaddah, berdiri sejak tahun 2017 berdasarkan Akta Notaris Nugraha Nur Pramana No. 86.
+                        Sekolah ini dirancang untuk mencetak generasi muda yang kompeten, berdaya saing, dan
+                        berkarakter.
+                    </p>
+                    <h4 class="fw-semibold">Visi</h4>
+                    <p>
+                        Menjadi Pusat Pendidikan yang berkualitas, berwawasan Iptek dan menghasilkan generasi
+                        yang Islami yang tangguh serta mandiri
+                    </p>
+                    <h4 class="fw-semibold">Misi</h4>
+                    <ol>
+                        <li>Menyelenggarakan pendidikan yang Islami, Modern, Dinamis dan Disiplin serta memenuhi
+                            Standar Pendidikan Nasional</li>
+                        <li>Memberikan layanan belajar berbasis Sains dan Teknologi tepat guna </li>
+                        <li>Meningkatkan kompetensi guru sesuai dengan bidang tugasnya</li>
+                        <li>Melengkapi sekolah dengan sarana dan prasarana yang memadai dan Modern</li>
+                    </ol>
+                    <a href="profil" class="btn btn-outline-primary">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- sambutan kepala sekolah --}}
+    <div class="container mt-5">
+        <div class="h3 pb-2 mb-4 fw-semibold text-secodary border-2 border-bottom border-secondary">
+            Sambutan Kepala Sekolah
+        </div>
+    </div>
+    <div class="bg-primary-subtle">
+        <div class="container py-5">
+            <div class="row g-4 d-flex align-items-center">
+                <div class="col-12 col-md-4 order-2 order-md-1">
+                    <div class="ratio ratio-1x1" style="max-height: 300px">
+                        <img src="assets/img/kepsek.jpg" alt="" class="img-fluid object-fit-cover rounded">
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 order-1 order-md-2">
+                    <p>
+                        <em>Assalamu’alaikum Warahmatullahi Wabarakatuh,</em>
+                    </p>
+                    <p>
+                        Dengan rahmat Allah SWT, kami terus berkomitmen mencetak generasi unggul, berkarakter, dan siap
+                        menghadapi tantangan.
+                        Kerja sama antara sekolah, orang tua, dan masyarakat adalah kunci kesuksesan kami.
+                    </p>
+                    <p>
+                        <em>
+                            Wassalamu’alaikum Warahmatullahi Wabarakatuh.
+                        </em>
+                    </p>
+                    <p class="text-muted">
+                        Kepala Sekolah<br>
+                        <strong>Asep Saepudin M. Mp.d</strong><br>
+                        SMK Niko Al-Farisi
                     </p>
                 </div>
             </div>
@@ -354,7 +403,7 @@
     </div>
 
     {{-- berita/artikel --}}
-    <div class="py-5" style="background-color: #E4E0E1">
+    <div class="py-5 bg-body-secondary">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4 mb-3">

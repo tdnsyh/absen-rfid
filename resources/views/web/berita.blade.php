@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
             @foreach ($artikels as $artikel)
                 <div class="col">
                     <div class="card mb-3 border-0 h-100">
@@ -32,7 +32,7 @@
                                     </div>
                                     <h5 class="card-title mb-0">{{ $artikel->judul }}</h5>
                                     <p class="card-text">
-                                        {!! Str::limit(strip_tags($artikel->isi_berita), 150) !!}...
+                                        {!! Str::limit(strip_tags($artikel->isi_berita), 100) !!}...
                                         <a href="{{ route('detail.berita', ['kategori' => $artikel->kategori, 'id' => $artikel->id, 'judul' => Str::slug($artikel->judul)]) }}"
                                             class="link-underline link-underline-opacity-0">
                                             Selengkapnya

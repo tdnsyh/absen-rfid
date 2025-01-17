@@ -9,7 +9,7 @@ class WebProfilController extends Controller
 {
     public function index()
     {
-        $title = 'profil';
+        $title = 'Profil SMK Niko Al - Farisi';
         return view('web.profil', compact('title'));
     }
 }

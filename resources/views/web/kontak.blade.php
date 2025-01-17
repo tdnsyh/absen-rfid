@@ -25,8 +25,8 @@
                                     <i class="bi bi-globe2 me-2"></i> Website: www.namaperusahaan.com
                                 </p>
                                 <p class="card-text">
-                                    <i class="bi bi-house-door-fill me-2"></i> Alamat: Jl. Contoh No. 123, Jakarta,
-                                    Indonesia
+                                    <i class="bi bi-house-door-fill me-2"></i>Kp. Babakan Rt/Rw. 02/01 Desa Sukarame
+                                    Kecamatan. Sukarame Kab. Tasikmalaya
                                 </p>
                                 <p class="card-text">
                                     Kami siap membantu Anda!
