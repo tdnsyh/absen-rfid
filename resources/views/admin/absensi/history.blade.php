@@ -66,6 +66,7 @@
                                     <th>No</th>
                                     <th>Nama Guru</th>
                                     <th>Tanggal</th>
+                                    <th>Jam Absen</th>
                                     <th>Jam Presensi</th>
                                     <th>Keterangan</th>
                                 </tr>
@@ -76,6 +77,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $presensi->guru->nama }}</td>
                                         <td>{{ $presensi->tanggal->format('d-m-Y') }}</td>
+                                        <td>{{ $presensi->jamAbsen->nama }}</td>
                                         <td>{{ $presensi->jam_presensi->format('H:i:s') }}</td>
                                         <td>{{ $presensi->keterangan }}</td>
                                     </tr>

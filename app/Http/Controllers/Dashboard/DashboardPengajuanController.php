@@ -48,7 +48,7 @@ class DashboardPengajuanController extends Controller
             case 'Izin':
                 return 'Izin';
             case 'Sakit':
-                return 'Sakit.';
+                return 'Sakit';
             default:
                 return 'Presensi otomatis setelah pengajuan disetujui.';
         }
